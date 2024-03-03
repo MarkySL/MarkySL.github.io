@@ -1,0 +1,570 @@
+/*===========GOOGLE FONTS=============*/
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap');
+/*============= Global CSS ===============*/
+*{
+    font-family: 'Ubuntu', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --blue: #212185;
+    --white: #fff;
+    --gray: #f5f5f5;
+    --black1: #222;
+    --black2: #999;
+}
+
+body{
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+.container{
+    position: relative;
+    
+}
+
+/*Main Title Design*/
+.nav_bar ul li .icon img /*Own Icon Style*/{
+    width: 50px;
+    height: 50px;
+    margin-top: 10px;
+    border-radius: 50%;
+}
+.nav_bar ul li a .main_title{
+    position: relative;
+    display: block;
+    padding: 10px;
+    height: 60px;
+    line-height: 30px; 
+    text-align: start;
+    white-space: nowrap;
+    font-weight: bold;
+    font-size: x-large;
+    color: yellowgreen;
+}
+
+/*Navigation Bar*/
+.nav_bar{
+    position: fixed;
+    width: 300px;
+    height: 100%;
+    background:var(--blue);
+    border-left: 10px solid var(--blue);
+    transition: 0.5s;
+    overflow: hidden;
+}
+
+.nav_bar.active /*Connected to Javascript*/{
+    width: 80px;
+
+}
+
+.nav_bar ul{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.nav_bar ul li{
+    position: relative;
+    width: 100%;
+    list-style: none;
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+}
+
+.nav_bar ul li:hover/*,
+.nav_bar ul li.hovered*/{
+    background-color: var(--white);
+}
+
+.nav_bar ul li:nth-child(1){
+    margin-bottom: 40px;
+    pointer-events: none;
+}
+
+.nav_bar ul li a{
+    position: relative;
+    display: block;
+    width: 100%;
+    display: flex;
+    text-decoration: none;
+    color: var(--white);
+}
+
+.nav_bar ul li:hover a/*,
+.nav_bar ul li.hovered a*/{
+    color: var(--blue);
+}
+
+.nav_bar ul li a .icon{
+    position: relative;
+    display: block;
+    min-width: 60px;
+    height: 60px;
+    line-height: 70px;
+    text-align: center;
+}
+
+.all_icon /*Fontawesome Navigation Icons Class*/{
+    font-size: 1.75rem;
+}
+
+.nav_bar ul li a .title{
+    position: relative;
+    display: block;
+    padding: 0 10px;
+    height: 60px;
+    line-height: 60px; 
+    text-align: start;
+    white-space: nowrap;
+    font-size: large;
+}
+
+/*------------- Curve Outside Navigation Bar --------------*/
+.nav_bar ul li:hover a::before/*,
+.nav_bar ul li.hovered a::before*/{
+    content: '';
+    position: absolute;
+    right: 0;
+    top: -50px;
+    width: 50px;
+    height: 50px;
+    background-color: transparent;
+    border-radius: 50%;
+    box-shadow: 35px 35px 0 10px var(--white);
+    pointer-events: none;
+}
+
+.nav_bar ul li:hover a::after/*,
+.nav_bar ul li.hovered a::after*/{
+    content: '';
+    position: absolute;
+    right: 0;
+    bottom: -50px;
+    width: 50px;
+    height: 50px;
+    background-color: transparent;
+    border-radius: 50%;
+    box-shadow: 35px -35px 0 10px var(--white);
+    pointer-events: none;
+}
+
+/*----------------- Main Bar ----------------------*/
+.main_bar{
+    position: absolute;
+    width: calc(100% - 300px); /*Syntax for Calc*/
+    left: 300px;
+    min-height: 100vh;
+    background: var(--white);
+    transition: 0.5s;
+}
+
+.main_bar.active{
+    width: calc(100% - 80px);
+    left: 80px;
+}
+
+.topbar{
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    padding: 0 10px;
+}
+
+.toggle{
+    position: relative;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.5rem;
+    cursor: pointer;
+}
+
+.user{
+    position: relative;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.user img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+   
+}
+
+/*======== Table Title Design ==========*/
+.table_title{
+    position: relative;
+    color: var(--blue);
+    font-weight: 800;
+}
+
+/* ============= DATA TABLE DESIGN ================= */
+.table_header{
+    display: flex;
+    justify-content: space-between;
+    align-items:flex-start;
+    margin-bottom: 10px;
+}
+/*======== Pagination Link Design ============*/
+
+.pagination a, .pagination span {
+    margin: 0 5px;
+    padding: 5px 10px;
+    border: 1px solid #ddd;
+    text-decoration: none;
+    color: #333;
+    display: inline-block;
+}
+
+.pagination a:hover {
+    background-color: #eee;
+}
+
+.pagination span {
+    background-color: #eee;
+    color: #555;
+}
+
+/* ========= Search Bar Design ========= */
+.search{
+    position: fixed;
+    right: 100px;
+}
+
+.search label{
+    position: relative;
+    width: 100%;
+}
+
+.search label input{
+    height: 30px;
+    border-radius: 40px;
+    padding: 5px 10px; 
+    padding-left: 35px;
+    font-size: 15px;
+    outline: none;
+    border: 1px solid var(--black2);
+}
+
+.search label .search_icon /*Fontawesome Search Icon Class*/{
+    position: absolute;
+    top: 2px;
+    left: 10px;
+    font-size: 1rem;
+}
+
+/*========= Add Button Design ============*/
+.table_header button{
+    background: #212185;
+    border-radius: 50px;
+    padding: 7px;
+    cursor: pointer;
+    position: relative;
+    border: none;
+}
+
+.table_header button{
+    text-decoration: none;
+    color: #fff;
+}
+     
+/*============ Table Design =============== */
+.vetstaff{
+    position: relative;
+    width: 100%;
+    padding: 10px;
+    display: grid;
+}
+
+.vetstaff .table_body{
+    position: relative;
+    display: grid;
+    min-height: 800px;
+    background: transparent;
+    backdrop-filter: blur(30px);
+    padding: 20px;
+    box-shadow: 0 7px 25px rgb(0, 0, 0, 0.08);
+    border: 2px solid rgba(255, 255, 255, .5);
+    border-radius: 20px;
+} 
+
+/* ============= Table Body Design =========== */
+.table_body table{
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    table-layout: fixed;
+}
+
+.table_body table td{
+    word-wrap: break-word;
+    max-width: 150px; /* Adjust this as needed */
+}
+
+.table_body table thead th{
+    font-weight: 600;
+    border: 1px solid rgb(0, 0, 0, 0.1);
+}
+
+.table_body table tr{
+    color: var(--black1);
+    border: 1px solid rgb(0, 0, 0, 0.1);
+}
+
+.table_body table tr:last-child{
+    border: 1px solid rgb(0, 0, 0, 0.1);
+}
+
+.table_body table tbody td{
+    border: 1px solid rgb(0, 0, 0, 0.1);
+}
+
+.table_body table tbody tr:hover{
+    background: var(--gray);
+    color: var(--black1);
+}
+
+.table_body table tr td{
+    padding: 20px;
+    text-align: center;
+    border: 1px solid rgb(0, 0, 0, 0.1);
+}
+
+/*Global Design for Modal Form*/
+.backdrop{
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Stay in place */
+    z-index: 2;
+    /* Sit on top */
+    padding-top: 10%;
+    /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+    overflow: auto;
+    /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0);
+    /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4);
+    /* Black w/ opacity */
+}
+
+/* Popup/Modal Form Designs */
+/* ================== Modal Form ================= */
+.backdrop {
+    display: none; /* Initially hide the modal */
+    position: fixed;
+    z-index: 1000; /* Ensure it's above other content */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    justify-content: center;
+    align-items: center;
+}
+
+.modal{
+    background-color: white;
+    border-radius: 10px;
+    padding: 50px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    position: absolute;
+    right: 30%;
+    top: 30%;
+}
+
+.modal .modal_form h2{
+    text-align:center;
+    margin: 10px 0px 20px;
+    font-size: 25px;
+    font-weight: 10px;
+}
+
+.modal .close{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+/* Additional Styles for Modal Form Elements */
+.modal_content label{
+    font-size: 14px;
+    color: #222;
+    display: inline-block;
+    width: 100px;
+    font-weight: 600;
+}
+
+.modal_content input[type="text"],
+.modal_content select 
+{
+    margin-top: 15px;
+    width: 200px;
+    padding: 10px;
+    outline: none;
+    border: 1px solid#aaa;
+    border-radius: 5px;
+}
+
+.modal_content button[type="submit"] {
+    width: 100%;
+    height: 40px;
+    border: none;
+    outline: none;
+    font-size: 15px;
+    box-shadow: 2px 2px 5px 5px rgba(0, 0, 0, 0.15);
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 600;
+    margin-top: 20px;
+}
+
+.modal_content button[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+/*====== Availability Button ======*/
+/* The switch - the box around the slider */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;  /* Width of the outside box */
+    height: 34px; /* Height of the outside box */
+    margin-bottom: 10px; /* Space below the switch */
+}
+  
+/* Hide default HTML checkbox */
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+/* The slider */
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: red; /* Red background by default */
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px; /* Height of the slider */
+    width: 26px;  /* Width of the slider */
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+  
+/* When the checkbox is checked, add a green background */
+input:checked + .slider {
+    background-color: green; /* Green background when checked */
+}
+  
+/* Create the slider/switch effect */
+.slider.round {
+    border-radius: 34px; /* Rounded borders for the outside box */
+}
+  
+.slider.round:before {
+    border-radius: 50%; /* Circular slider */
+}
+  
+/* Size and position of the slider */
+input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px); /* Move the slider to the right when checked */
+}
+
+/*Upload Image Button*/
+tbody button.uploadImgBtn{
+    padding: 5px;
+    cursor: pointer;
+}
+
+/* Style for the image preview or thumbnail display */
+.staffImage-preview {
+    display: none; /* Hidden by default */
+    position: absolute;
+    z-index: 1000; /* Ensure it appears above other content */
+    width: 192px; /* 2 inches */
+    height: 192px; /* 2 inches */
+    object-fit: cover; /* This will ensure the image covers the area without distorting its aspect ratio */
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 30px rgba(0, 0, 0, .5);
+    /* Add more styling as needed */
+}
+/*======= Responsive Design ========*/
+@media(max-width: 991px){
+    .nav_bar{
+        left: -300px;
+    }
+    .nav_bar.active{
+        width: 300px;
+        left: 0;
+    }
+    .main_bar{
+        width: 100%;
+        left: 0;
+    }
+    .main_bar.active{
+        left: 300px;
+    }
+}
+
+@media(max-width: 480px){
+    .user{
+        min-width: 40px;
+    }
+    .nav_bar{
+        width: 100%;
+        left: -100%;
+        z-index: 1000;
+    }
+    .nav_bar.active{
+        width: 100%;
+        left: 0;
+    }
+    .toggle{
+        z-index: 10001;
+    }
+    .main_bar.active .toggle{
+        color: #fff;
+        position: fixed;
+        right: 0;
+        left: initial;
+    }
+}
